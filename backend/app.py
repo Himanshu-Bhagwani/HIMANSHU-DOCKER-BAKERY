@@ -103,8 +103,6 @@ def get_products():
     
     # Store in cache with expiration (5 minutes)
     redis_client.setex('products', 300, json.dumps(products))
-
-
     
     return jsonify(products)
 
@@ -203,28 +201,6 @@ def get_order_status(order_id):
     redis_client.setex(cache_key, 30, json.dumps(order_data))
     
     return jsonify(order_data)
-
-@app.route('/api/refresh-products-cache', methods=['POST'])
-def refresh_products_cache():
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT id, name, description, price, image_url FROM products')
-    products = []
-    for row in cur.fetchall():
-        products.append({
-            'id': row[0],
-            'name': row[1],
-            'description': row[2],
-            'price': float(row[3]),
-            'image_url': row[4]
-        })
-    cur.close()
-    conn.close()
-    
-    redis_client = get_redis_connection()
-    redis_client.setex('products', 300, json.dumps(products))
-    
-    return jsonify({'message': 'Products cache refreshed', 'products_count': len(products)})
 
 # Health check endpoint
 @app.route('/health', methods=['GET'])

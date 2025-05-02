@@ -49,7 +49,7 @@ docker-compose up --build
 ## 🔗 Accessing the System
 
 - **Frontend:** [http://localhost:3000](http://localhost:3000)  
-- **Backend API:** [http://localhost:5000/api/products](http://localhost:5000/api/products)  
+- **Backend API:** [http://localhost:5000/api/products](http://localhost:5050/api/products)  
 - **RabbitMQ Dashboard:** [http://localhost:15672](http://localhost:15672)  
 
 ![RabbitMQ UI](https://github.com/user-attachments/assets/a522b956-abac-48d2-95c2-0bc625368f48)
