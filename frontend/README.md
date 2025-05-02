@@ -50,7 +50,7 @@ Ensure you have the following installed:
 
 3. Access the services:
    - Frontend: [http://localhost:3000](http://localhost:3000)
-   - Backend API: [http://localhost:5000/api/products](http://localhost:5000)
+   - Backend API: [http://localhost:5000/api/products](http://localhost:5050)
    - RabbitMQ UI: [http://localhost:15672](http://localhost:15672)  
      (Username: guest, Password: guest)
 
